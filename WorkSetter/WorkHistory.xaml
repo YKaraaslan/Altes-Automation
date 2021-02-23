@@ -1,0 +1,43 @@
+﻿<Window x:Class="WorkSetter.WorkHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkSetter"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
+        Title="İş Geçmişi" Height="450" Width="800">
+    <Grid>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150" Content="Raporla"
+                Margin="10" Background="blue" Opacity="0.7" Height="40" Click="Report_Click"/>
+        <DataGrid VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="workHistoryDataGrid"
+          ItemsSource="{Binding projectsAll}"
+          CanUserSortColumns="True"
+          CanUserAddRows="False" Background="#FAFAFA" SelectionUnit="FullRow"
+          AutoGenerateColumns="False" materialDesign:DataGridAssist.CellPadding="8 4 4 4" 
+          materialDesign:DataGridAssist.ColumnHeaderPadding="30 4 4 4"
+          HeadersVisibility="All" IsReadOnly="True" IsTextSearchCaseSensitive="True"
+                  SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn
+                        Binding="{Binding Operator}"
+                        Header="Operatör"/>
+
+                <materialDesign:DataGridTextColumn
+                      Binding="{Binding Length}"
+                      Header="Metraj"/>
+
+                <materialDesign:DataGridTextColumn
+                      Binding="{Binding Date}"
+                      Header="Tarih"/>
+
+                <materialDesign:DataGridTextColumn
+                      Binding="{Binding Work}"
+                    Width="*"
+                      Header="Yapılan İş"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

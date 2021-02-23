@@ -1,0 +1,50 @@
+﻿<Window x:Class="Automation.ZZZZZZZZZ"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Automation"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow"
+        xmlns:language ="clr-namespace:Automation.Languages" Icon="Assets\Logo.ico"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="ZZZZZZZZZ" Height="352" Width="800">
+
+
+    <materialDesign:Card Width="200" Height="275" UniformCornerRadius="20" x:Name="device1Card" Visibility="Visible"
+                         Background="WhiteSmoke">
+        <Grid>
+            <Image Source="Assets\devices.png" Height="40" Width="40" Stretch="UniformToFill" Margin="0,20,0,0" x:Name="image1" 
+                   VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <Separator Style="{StaticResource MaterialDesignDarkSeparator}" VerticalAlignment="Top" Margin="2, 75" />
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,105,0,0">
+                <Label FontWeight="Bold" x:Name="deviceName" Content="{Binding DeviceName}"/>
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" x:Name="operatorName" Text="{Binding OperatorName}"/>
+            </StackPanel>
+            <Button Tag="{Binding}"  Style="{StaticResource MaterialDesignFloatingActionButton}" x:Name="projectOpens"
+                            HorizontalAlignment="Right" VerticalAlignment="Center" Height="34" Width="35" BorderBrush="Transparent" Background="Red" Margin="0,0,5,83">
+             </Button>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="8">
+                <Button x:Name="settings" Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" VerticalAlignment="Bottom"
+                        materialDesign:RippleAssist.IsCentered="True">
+                    <materialDesign:PackIcon Kind="CogOutline" />
+                </Button>
+            </StackPanel>
+
+            <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 40" Background="SeaGreen" CornerRadius="10"
+                    Width="150">
+                <WrapPanel>
+                    <Label Content="{x:Static language:language.length}" Foreground="White" FontSize="15"  Margin="5 0 0 0"/>
+                    <Label Content="{Binding length}" Foreground="White" FontSize="15" x:Name="length" Margin="0 0 5 0"/>
+                </WrapPanel>
+            </Border>
+            <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 75" Background="CornflowerBlue" 
+                    CornerRadius="10" Width="150">
+                <WrapPanel>
+                    <Label Content="{x:Static language:language.speed}" Foreground="White" FontSize="15"  Margin="5 0 0 0"/>
+                    <Label Content="{Binding speed}" Foreground="White" FontSize="15" x:Name="deviceWorkings" Margin="0 0 5 0"/>
+                </WrapPanel>
+            </Border>
+        </Grid>
+    </materialDesign:Card>
+</Window>

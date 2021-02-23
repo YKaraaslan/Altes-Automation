@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Automation.OperatorsItemsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Automation"
+            xmlns:language ="clr-namespace:Automation.Languages"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="200">
+    <Grid>
+        <materialDesign:Card Width="150" x:Name="operator1Card" Height="150">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image Source="Assets\img_contact.png" Height="50" Width="50" Stretch="UniformToFill" Margin="0,0,0.4,0" />
+                <Separator Grid.Row="0" Style="{StaticResource MaterialDesignDarkSeparator}" VerticalAlignment="Bottom" />
+                <Button Tag="{Binding}" Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+                            Click="operatorInformation" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,12,68" Height="30" Width="30" Grid.RowSpan="2">
+                    <materialDesign:PackIcon Kind="InformationVariant" Height="25" Width="25" />
+                </Button>
+                <StackPanel Grid.Row="1" Margin="8 10 8 0">
+                    <TextBlock FontWeight="Bold" Text="{Binding operatorName}" x:Name="operatorText" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Grid.Row="2" Orientation="Horizontal" Margin="8">
+                    <Button Tag="{Binding}" Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" 
+                            materialDesign:RippleAssist.IsCentered="True" Click="settings" VerticalAlignment="Bottom">
+                        <materialDesign:PackIcon Kind="CogOutline" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

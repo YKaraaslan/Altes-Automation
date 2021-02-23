@@ -1,0 +1,314 @@
+﻿<Window x:Class="WorkSetter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkSetter"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Background="SlateGray"
+        WindowStartupLocation="CenterScreen"
+        Icon="Assets/logo.ico"
+        Title="Unity Takip Sistemi" Height="705" Width="1000"
+        MinWidth="500" MinHeight="205"
+        FontSize="14">
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+            <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25, 10, 0, 5">
+                <Rectangle x:Name="connection" Fill="red" 
+                       Width="25" Height="25" RadiusX="12" RadiusY="12"/>
+                <Label Content="Bağlantı sağlanamadı..." Foreground="White" FontSize="17" Margin="5, 0"
+                       x:Name="connectionLabel"/>
+            </WrapPanel>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card1"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device1.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine1" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine1" FontSize="14"/>
+                            <TextBlock x:Name="operator1" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Operator1"
+                                       FontSize="13"/>
+                            <TextBlock x:Name="timePassed1" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection1" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work1" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork1"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport1"/>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card2"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device2.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine2" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine2" FontSize="14"/>
+                            <TextBlock x:Name="operator2" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                       Text="Operator2" FontSize="13"/>
+                            <TextBlock x:Name="timePassed2" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection2" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work2" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork2"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport2"/>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card3"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device3.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine3" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine3" FontSize="14"/>
+                            <TextBlock x:Name="operator3" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                       Text="Operator3" FontSize="13"/>
+                            <TextBlock x:Name="timePassed3" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection3" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work3" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork3"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport3"/>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card4"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device4.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine4" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine4" FontSize="14"/>
+                            <TextBlock x:Name="operator4" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                       Text="Operator4" FontSize="13"/>
+                            <TextBlock x:Name="timePassed4" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection4" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work4" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork4"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport4"/>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card5"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device5.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine5" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine5" FontSize="14"/>
+                            <TextBlock x:Name="operator5" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                       Text="Operator5" FontSize="13"/>
+                            <TextBlock x:Name="timePassed5" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection5" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work5" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork5"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport5"/>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card6"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device6.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine6" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine6" FontSize="14"/>
+                            <TextBlock x:Name="operator6" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                       Text="Operator6" FontSize="13"/>
+                            <TextBlock x:Name="timePassed6" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection6" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work6" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork6"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport6"/>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card7"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device7.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine7" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine7" FontSize="14"/>
+                            <TextBlock x:Name="operator7" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                       Text="Operator7" FontSize="13"/>
+                            <TextBlock x:Name="timePassed7" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection7" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work7" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork7"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport7"/>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card8"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device8.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine8" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine8" FontSize="14"/>
+                            <TextBlock x:Name="operator8" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                       Text="Operator8" FontSize="13"/>
+                            <TextBlock x:Name="timePassed8" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection8" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work8" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork8"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport8"/>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card9"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device9.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine9" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine9" FontSize="14"/>
+                            <TextBlock x:Name="operator9" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                       Text="Operator9" FontSize="13"/>
+                            <TextBlock x:Name="timePassed9" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection9" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work9" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork9"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport9"/>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card MinHeight="100" UniformCornerRadius="10" Visibility="Collapsed" x:Name="card10"
+                         Background="WhiteSmoke" Margin="20 5 10 20" VerticalAlignment="Top">
+                <Grid>
+                    <WrapPanel>
+                        <Image  Height="50" Width="50" Stretch="Uniform" Margin="20,20,0,20"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Source="Assets\device10.png"/>
+                        <StackPanel VerticalAlignment="Center" Margin="20, 20, 0, 20">
+                            <TextBlock x:Name="machine10" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                                       FontWeight="Bold" Text="Makine10" FontSize="14"/>
+                            <TextBlock x:Name="operator10" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                       Text="Operator10" FontSize="13"/>
+                            <TextBlock x:Name="timePassed10" Text="-----" FontSize="13" HorizontalAlignment="Left"
+                                       Margin="0,5,0,0" Foreground="Green"/>
+                        </StackPanel>
+                        <Rectangle Fill="Gray" Margin="20, 20, 0, 20" Width="1"/>
+                        <Rectangle x:Name="connection10" Fill="red" 
+                                   Width="25" Height="25" RadiusX="12" RadiusY="12" Margin="15,0,15,0"/>
+                        <TextBlock x:Name="work10" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"  
+                                   Text="------------------------------" Margin="0, 20"
+                                   MaxWidth="470"/>
+                    </WrapPanel>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30" x:Name="machineWork10"
+                        Content="İş Geçmişi" Margin="0, 0, 140, 0" Click="Work_Click" Background="Green" BorderBrush="Green"/>
+                    <Button VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="30"
+                        Content="Raporla" Margin="0, 0, 25, 0" Click="Report_Click" Background="DodgerBlue" 
+                            BorderBrush="DodgerBlue" x:Name="machineReport10"/>
+                </Grid>
+            </materialDesign:Card>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="Automation.ReportCompareShowDate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Automation"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow"
+        xmlns:language = "clr-namespace:Automation.Languages" Icon="Assets\Logo.ico"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="{x:Static language:language.dateChoose}" Height="255" Width="350">
+    <Grid>
+        <DatePicker VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20" x:Name="dateBeginning"
+  Width="140" materialDesign:HintAssist.Hint="{x:Static language:language.dateBeginning}"
+  Style="{StaticResource MaterialDesignOutlinedDatePicker}" FirstDayOfWeek="Monday" SelectedDateChanged="dateBeginning_SelectedDateChanged"/>
+        <DatePicker VerticalAlignment="Top" HorizontalAlignment="Left" Margin="180 20 0 0" x:Name="dateEnd"
+  Width="140" materialDesign:HintAssist.Hint="{x:Static language:language.dateDue}"
+  Style="{StaticResource MaterialDesignOutlinedDatePicker}" FirstDayOfWeek="Monday" SelectedDateChanged="dateEnd_SelectedDateChanged" />
+        <Button x:Name="reportDate" HorizontalAlignment="Left" Background="#FF009EC1" BorderBrush="#FF009EC1"
+                        Margin="20,100,0,0" VerticalAlignment="Top" Width="300" Height="40" Content="{x:Static language:language.report}"
+                        ToolTip="{x:Static language:language.reportSelectedDate}" Click="reportDate_Click"/>
+        <Border Width="300" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,150,0,0" Background="Orange" Height="1"/>
+        <Button x:Name="reportAll" HorizontalAlignment="Left" Background="LightGreen" BorderBrush="LightGreen"
+                        Margin="20,160,0,0" VerticalAlignment="Top" Width="300" Height="40" Content="{x:Static language:language.reportAll}"
+                        ToolTip="{x:Static language:language.reportAll}" Click="reportAll_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Automation.DevicesItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Automation"
+                xmlns:language ="clr-namespace:Automation.Languages"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" Margin="20"
+             d:DesignHeight="250" d:DesignWidth="250">
+
+    <materialDesign:Card Width="140" Height="160" UniformCornerRadius="20" x:Name="device1Card" Visibility="Visible">
+        <Grid>
+            <Image Source="Assets\devices.png" Height="40" Width="40" Stretch="UniformToFill" Margin="0,20,0,0" x:Name="image1" 
+                   MouseLeftButtonDown="device_Click"
+                   VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <Separator Style="{StaticResource MaterialDesignDarkSeparator}" VerticalAlignment="Top" Margin="2, 75" />
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,105,0,0">
+                <TextBlock FontWeight="Bold" Text="Device" x:Name="deviceName"></TextBlock>
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Text="Operator" x:Name="operatorName"/>
+            </StackPanel>
+            <Button Tag="{Binding}"  Style="{StaticResource MaterialDesignFloatingActionButton}" Click="projectOpen" x:Name="projectOpens"
+                            HorizontalAlignment="Right" VerticalAlignment="Center" Height="34" Width="35" BorderBrush="Transparent" Background="#FF3A8CB7" Margin="0,66,5,60">
+                <materialDesign:PackIcon Kind="FolderOpenOutline" Foreground="White" Height="20" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="8">
+                <Button x:Name="settings" Click="devicesSettings" Style="{StaticResource MaterialDesignToolButton}" Width="30" Padding="2 0 2 0" VerticalAlignment="Bottom"
+                        materialDesign:RippleAssist.IsCentered="True">
+                    <materialDesign:PackIcon Kind="CogOutline" />
+                </Button>
+            </StackPanel>
+        </Grid>
+    </materialDesign:Card>
+</UserControl>
